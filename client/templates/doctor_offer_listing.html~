@@ -1,0 +1,26 @@
+<template name="merchantOfferListingTemplate">
+<section id="back">
+<div>
+        
+            <div class="slider-inner">
+                <div class="container">
+                
+                    <div class="row">
+                        <div class="col-sm-6" style="color: #ffffff;">
+                        <p style = "margin-left:1000px" >
+                           <br><br><br>
+                           <a href ="/viewappointments" class = "myButton"><input type ="button" id ="viewappointments" value="Appointment Requests" ></a>
+                           <br><br><br><br>
+                           <a class = "myButton" href ="/viewpatientrequests"><input type ="button" id ="viewpatientrequests" value="Patient Requests" ></a>
+                           <br><br><br><br>
+                           <a href ="/livechat" class = "myButton"><input type ="button" id ="livechat" value="Join Live-Chat" ></a>
+                           <br><br><br>
+                           </p>
+                        </div>
+                   </div>
+                </div>
+                </div>
+           
+        </div><!--/.item-->     
+        </section>  
+</template>

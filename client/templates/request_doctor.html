@@ -1,0 +1,56 @@
+<template name ="requestDoctorTemplate">
+    {{> patientNavHeader}}
+<div class=back>
+<br><br><br>
+    {{#if isInRole 'patient'}}
+    <!--<div class="skin-black">
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+           
+            <section class="content">-->
+            <div class="container">
+       <center> <h2 style="font-family:Lucida Calligraphy Italic;"> Add Symptoms </h2></center>
+	<center><form class="new-symptom">
+         <!--<input type="text" name="userid" placeholder="Add Username" />-->
+	 <input type = "text" name = "category" placeholder = "Category">
+	 <input type = "text" name = "symptoms" placeholder = "Add Symptoms">
+	<input type="file" name="image" />
+	<input type = "submit" id = "submit">
+      </form></center>
+          <!--<button type="submit" class="btn btn-primary">Add</button>
+{{/autoForm}}-->
+      </div>
+	<ul>
+<h3 style="align:right;padding-left:700px;font-family:Lucida Calligraphy Italic;">Recommended Doctors for Appointment Booking</h3>
+<div style="align:right;padding-left:700px;font-family:Lucida Calligraphy Italic;">
+{{#each recommend}}
+<b>Doctor Name: </b>{{doctor}}<br>
+{{/each}}
+</div>
+             {{#each details}}
+<b>#</b>
+<b>Name:</b> {{name}}<br><b>Category:</b> {{category}}<br><b>Symptoms:</b> {{symptom}}<br><b>Prescription:</b> {{prescription}}<br><b>Prescribed by:</b> {{doctor}}
+<br><br>
+
+		<!--<li>Name: {{name}}</li>
+		<li>Category: {{category}}</li>
+  		<li>Symptoms: {{symptom}}</li>
+		<li>Prescription: {{prescription}}</li>
+		<li>Prescribed by: {{doctor}}</li>-->
+	{{/each}}
+		</ul>
+
+          <!--  </section>-->
+           
+            <div class="footer-main" style="padding-top: 400px;">
+                Copyright &copy;Online Health Care, 2016
+            </div>
+        <!--</div>
+        
+    </div>-->
+    {{else}}
+        <h2>This page is only for registered patients.</h2>
+    {{/if}}
+
+    <script src="/js/app.js" type="text/javascript"></script>
+</div>
+</template>

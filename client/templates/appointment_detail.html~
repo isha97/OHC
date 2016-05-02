@@ -1,0 +1,20 @@
+<template name ="AppointmentDetailTemplate">
+{{>patientNavHeader}}
+<h2 style="font-family:Lucida Calligraphy Italic;"> Please fill in the suitable date and time of appointment:</h2>
+ <form class = "new-appoint">
+       <div class="form-group">
+          <label for="myInput">Input name</label>
+          <div class="input-group datetimepicker">
+             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+             <input name="dateinput"  class="set-due-date form-control" type="text"/>
+           </div>
+        </div>
+<input type = "submit" id = "submit">
+</form>
+</template>
+
+<!--<template name="myDateTemplate">
+    <form>
+       
+    </form>
+</template>-->

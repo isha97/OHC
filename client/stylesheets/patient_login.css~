@@ -1,0 +1,5 @@
+.back{
+background: transparent url('/images/slider/header.jpg') no-repeat left top;  margin-top: -45px;
+min-height:100%;
+font-family:"Lucida Calligraphy Italic";
+}

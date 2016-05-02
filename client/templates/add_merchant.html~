@@ -1,0 +1,56 @@
+<template name="addMerchantTemplate">
+	{{> merchantNavHeader}}
+  {{#unless userLoggedIn}}
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-2">
+      </div>
+      <div class="col-lg-8"><br>
+
+        <form id="siteadminlogin">
+          <table class="center">
+		<tr><td><label for="username">Username</label></td><td></td>
+            <td><input type="text" placeholder="Username" required id="username"></td></tr>
+            <br>
+		<tr><td><label for="password">Password</label></td><td></td>
+            <td><input type="password" placeholder="Password" required id="password"></td></tr>
+            <br>
+            <tr><td><input class="btn-btn-info" type="submit" value="Submit"></td></tr>
+          </table>
+        </form>
+      </div>
+      <div class="col-lg-2">
+      </div>
+    </div>
+  </div>
+  {{else}}
+    <input type="button" id="logout" value="Logout">
+    {{#if isInRole 'siteadmin'}}
+      
+      
+      <a href ="/showmerchant"><input type ="button" id ="showmerchant" value="Show Doctor"></a>
+      <div class="container">
+        {{#autoForm collection="doctorsCollection" id="insertDocForm" type="insert" omitFields="profileImageLocation"}}
+          <fieldset>
+          <legend>Add Doctor</legend>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='address'}}
+            {{> afQuickField name='contactDetails'}}
+            {{> afQuickField name='age'}}
+            {{> afQuickField name='gender'}}
+            {{> afQuickField name='specialization'}}
+            {{> afQuickField name='qualification'}}
+            {{> afQuickField name='startt'}}
+            {{> afQuickField name='endt'}}
+
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Submit</button>
+         
+        {{/autoForm}}
+      </div>
+    {{else}}
+      <h3>You are unauthorized</h3>
+    {{/if}}
+  {{/unless}}
+  
+</template>

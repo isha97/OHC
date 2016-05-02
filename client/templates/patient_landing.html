@@ -1,0 +1,53 @@
+<template name="patientLandingTemplate">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    {{> patientNavHeader}}
+
+    {{#if isInRole 'patient'}}
+    <!--<div class="skin-black">
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+           
+            <section class="content">-->
+            
+                {{>patientOfferListingTemplate}}
+
+            <!--</section>-->
+           
+            <div class="footer-main">
+                Copyright &copy;Online Health Care, 2016
+            </div>
+        <!--</div>
+        
+    </div>-->
+    {{else}}
+        <h2>This page is only for registered patients.</h2>
+    {{/if}}
+
+    <script src="/js/app.js" type="text/javascript"></script>
+</template>
+
+<template name="patientOfferListingTemplate">
+<section id="land">
+<div style="background-image: url(images/slider/bg1.jpg);height:100%;">
+        
+            <div class="slider-inner">
+                <div class="container">
+                
+                    <div class="row">
+                        <div class="col-sm-6" style="color: #ffffff;">
+                        <p style = "margin-left:1000px" >
+                           <br><br><br>
+                           <a href ="/bookappointments" class = "myButton"><input type ="button" id ="bookappointments" value="Book an Appointment" ></a>
+                           <br><br><br><br>
+                           <a class = "myButton" href ="/requestdoctor"><input type ="button" id ="requestdoctor" value="Request a Doctor" ></a>
+                           <br><br><br><br>
+                           <a href ="/livechat" class = "myButton"><input type ="button" id ="livechat" value="Join Live-Chat" ></a>
+                           <br><br><br>
+                           </p>
+                        </div>
+                   </div>
+                </div>
+                </div>
+           
+        </div><!--/.item-->     
+        </section>  
+</template>

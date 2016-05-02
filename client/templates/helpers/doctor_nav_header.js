@@ -1,0 +1,26 @@
+Template.doctorNavHeaderr.helpers({
+   'userMerchantName': function(){
+        var merchantId = Meteor.user().profile.merchant;
+        if (merchantId) {
+            merchant = doctorsCollection.findOne({_id:merchantId});
+            if (merchant)
+                return merchant.name;
+        }
+        return "Merchant";
+   },
+   'userLoggedIn': function(){
+        if (Meteor.user())
+            return true;
+        else
+            return false;
+   },
+   'merchantTypeOffline': function(){
+      var merchantId = Meteor.user().profile.merchant;
+        if (merchantId) {
+            merchant = doctorsCollection.findOne({_id:merchantId});
+            if (merchant && merchant.type == "offline")
+                return true;
+        }
+        return false;
+   }
+});

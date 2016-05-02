@@ -1,0 +1,17 @@
+<template name = "ViewAppointmentTemplate">
+{{>doctorNavHeader}}
+<div class=back>
+<br><br>
+<center><h2 style="font-family:Lucida Calligraphy Italic;">Appointment Requests</h2></center>
+<center><i><b>Please select to change status.</b></i></center>
+{{# each apprequest}}
+<tr class = "patien {{selectedpatien}}"> <td><b>Patient Name:</b> {{pname}}</td><td><b>Date Requested:</b> {{date_req}}</td><td><b>Status:</b> {{status}}</td>
+<br>
+</tr>
+{{/each}}
+<form class="appoint">
+<center><input type="text" name="Status" placeholder = "Status">
+<input type = "submit" id = "submit"></center>
+</form>
+</div>
+</template>

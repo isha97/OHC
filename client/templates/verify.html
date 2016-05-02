@@ -1,0 +1,81 @@
+<template name="verifyProfileTemplate">
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  {{#unless currentUser}}
+   <div class="skin-black">
+      <div class="wrapper row-offcanvas row-offcanvas-left">
+        <!-- Main content -->
+        <section class="content">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-2">
+      </div>
+      <div class="col-lg-8"><br>
+
+        <form id="verifierlogin">
+          <table class="center">
+            <tr><td><input type="text" placeholder="Username" required id="username"></td></tr>
+            <tr><td><input type="password" placeholder="Password" required id="password"></td></tr>
+            <tr><td><input class="btn-custom" type="submit" value="Submit"></td></tr>
+          </table>
+        </form>
+      </div>
+      <div class="col-lg-2">
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+    </div>
+  {{else}}
+  <div class="skin-black">
+      <div class="wrapper row-offcanvas row-offcanvas-left">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container">
+    <input type="button" id="logout" value="Logout"><br>
+    {{#if isInRole 'verifier'}}
+        {{#if user}}
+          {{#each user}}
+          <div class="row">
+              <div class="col-xs-12">
+                  <div class="panel">
+                      <header class="panel-heading">
+                        {{profile.name}}
+                      </header>
+                      <div class="panel-body">
+                        <p>ID: {{_id}}, Name: {{profile.name}}, University: {{profile.university}}{{university}}, Date of Birth: {{profile.dateOfBirth}}</p>
+                        <a href="{{profile.frontIdentityImage}}{{frontIdentityImage}}"><img src="{{frontIdentityImage}}{{profile.frontIdentityImage}}" style="width:400px;height:300px"></a><br><a href="{{backIdentityImage}}{{profile.backIdentityImage}}"><img src="{{backIdentityImage}}{{profile.backIdentityImage}}" style="width:400px;height:300px"></a><br>
+                        <input class="btn btn-primary" type="button" value="Approve" id="approve"><br>
+                        <form id="rejectForm">
+                          <select id="selector">
+                            <option value="nameNotMatch">Name on ID and Profile Not Matching</option>
+                            <option value="photoUnclear">Photo Not Clear</option>
+                            <option value="dobMismatch">Date of Birth Mismatch</option>
+                            <option value="invalidID">Invalid ID Card</option>
+                            <option value="invalidUniv">Invalid University</option>
+                            <option value="custom">Custom</option>
+                          </select>
+                          <br>
+                          <!-- {{#if showCustomReason}} -->
+                            <input type="text" placeholder="Reason to send to customer in case of custom" id="reason" style="width:100%;"><br>
+                          <!-- {{/if}} -->
+                          <input class="btn btn-primary" type="submit" value="Reject" id="reject">
+                        </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {{/each}}
+        {{else}}
+          No users to be verified right now :)
+        {{/if}}
+    {{else}}
+      <h3>You are unauthorized</h3>
+    {{/if}}
+              </div>
+        </section>
+        </div>
+        </div>
+  {{/unless}}
+  
+</template>

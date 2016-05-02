@@ -1,0 +1,12 @@
+<template name="CheckStatusTemplate">
+{{>patientNavHeader}}
+<div class= back>
+<br><br>
+<center><h2 style="font-family:Lucida Calligraphy Italic;">Appointments Status</h2></center>
+{{#each appstatus}}
+<tr class = "appst"> <td><b>Patient Name:</b> {{pname}}</td><td><b>Doctor Name:</b> {{dname}}</td><td><b>Date Requested:</b> {{date_req}}</td><td><b>Status:</b> {{status}}</td>
+<br>
+</tr>
+{{/each}}
+</div>
+</template>

@@ -1,0 +1,36 @@
+<template name="BookAppointmentTemplate">
+{{>patientNavHeader}}
+<div class=back>
+{{#if isInRole 'patient'}}
+<br><br>
+<center><h2 style="font-family:Lucida Calligraphy Italic;">Doctors Available</h2></center>
+<input type="button" class="toggle" value="toggle sort"><a href = "/checkstatus"><input type="button" class = "checkstatus" value="Check Status"></a>
+<div class=container>
+	{{#each merchant_profile}}
+		{{> merchants}}
+	{{/each}}
+</div>
+{{else}}
+<h3>You are not registered!</h3>
+{{/if}}
+</div>
+</template>
+
+<template name="merchants">
+<br>
+<details>
+<summary>{{name}}</summary>
+<ul>
+<li>Address: {{address}}</li>
+<li>Contact Details: {{contactDetails}}</li>
+<li>Gender: {{gender}}</li>
+<li>Age: {{age}}</li>
+<li>Qualification: {{qualification}} </li>
+<li>Specialization: {{specialization}} </li>
+<li>Available Time: {{availt}}</li>
+<a href = "/appointmentdetail/{{id}}"><input type="button" class = "bookappoint" value="Book an Appointment"></a>
+</ul>
+</details>
+
+</template>
+

@@ -1,0 +1,35 @@
+<template name="showMerchantTemplate">
+{{>adminNavHeader}}
+<div class="back">
+<br><br>
+{{#if isInRole 'siteadmin'}}
+<center><h2 style="font-family:Lucida Calligraphy Italic;">Doctor List</h2></center>
+<input type="button" class="toggle" value="toggle sort" />
+ <div class = container>
+	{{#each merchant_profile}}
+		{{> merchant}}
+	{{/each}}
+               </div>
+{{else}}
+      <h3>You are unauthorized</h3>
+    {{/if}}
+</div>
+</template>
+<template name="merchant">
+  <br>
+<details>
+<summary>{{name}}</summary>
+<ul>
+<li>Address: {{address}}</li>
+<li>Contact Details: {{contactDetails}}</li>
+<li>Gender: {{gender}}</li>
+<li>Age: {{age}}</li>
+<li>Qualification: {{qualification}} </li>
+<li>Specialization: {{specialization}} </li>
+<li>Slot start time: {{startt}}</li>
+<li>Slot end time: {{endt}}</li>
+<a href ="/showmerchant/{{_id}}"><input type ="button" id ="modifymerchant" value="Modify"></a>
+</ul>
+</details>
+
+</template>

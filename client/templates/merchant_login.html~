@@ -1,0 +1,47 @@
+<template name="merchantLoginTemplate" >
+    {{> doctorNavHeader}}
+    
+    <div class="skin-black">
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side" style="padding-left:20%; padding-top:50px;">
+                <!-- Content Header (Page header) -->
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Login
+                                </header>
+                                <div class="panel-body">
+                                    <form id="login" role="form">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" required id="username" placeholder="Enter username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" required id="password" placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Sign in</button>
+                                    </form>
+                                    <br>
+                                    
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding:180px 0 0 0px;">
+                        </div>
+                    </div>
+                </section>
+            </aside>
+            <div class="footer-main">
+                Copyright &copy; Online Health Care, 2016
+            </div>
+        </div>
+    </div>
+</template>
+

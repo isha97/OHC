@@ -1,0 +1,30 @@
+<template name= "DoctorProfileTemplate">
+<div class=overlay>
+{{#if isInRole 'merchant'}}
+<center><h2 style="font-family:Lucida Calligraphy Italic;">Doctor Profile</h2></center>
+ <div class = container>
+	{{#each doctor_profile}}
+		{{> doct}}
+	{{/each}}
+               </div>
+{{else}}
+      <h3>You are unauthorized</h3>
+    {{/if}}
+</div>
+</template>
+<template name="doct">
+  <br>
+<ul>
+<li>Name: {{name}} </li>
+<li>Address: {{address}}</li>
+<li>Username: {{id}}</li>
+<li>Qualification: {{qualification}}</li>
+<li>Contact Details: {{contactDetails}}</li>
+<li>Gender: {{gender}}</li>
+<li>Specialization: {{specialization}}</li>
+<li>Age: {{age}}</li>
+<li>Slot Start Time: {{startt}}</li>
+<li>Slot End Time: {{endt}}</li>
+</ul>
+
+</template>

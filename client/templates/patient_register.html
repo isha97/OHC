@@ -1,0 +1,12 @@
+<template name ="PatientRegisterTemplate">
+ <div class="container">
+        {{#autoForm collection="patientsCollection" id="insertDocForm" type="insert" }}
+          <fieldset>
+          <legend>Patient Register</legend>
+            {{> afQuickField name='name'}}
+	    		
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        {{/autoForm}}
+      </div>
+</template>

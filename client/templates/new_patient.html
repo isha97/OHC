@@ -1,0 +1,20 @@
+<template name = "NewPatientTemplate">
+	
+	<div class="container2">
+  
+        {{#autoForm collection="patientsCollection" id="insertPatForm" type="insert"  }}
+          <fieldset>
+          <center><h1 style="font-family:Lucida Calligraphy Italic;">Patient Register</h1></center>
+            {{> afQuickField name='name'}}
+	    {{> afQuickField name = 'address'}}
+	    {{> afQuickField name = 'contactDetails'}}
+	    {{> afQuickField name = 'gender'}}
+	     {{> afQuickField name = 'user'}}
+            {{> afQuickField name = 'age'}}
+	    {{> afQuickField name = 'bloodgroup'}}
+	    {{> afQuickField name = 'caseHistory'}}		
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        {{/autoForm}}
+      </div>
+</template>

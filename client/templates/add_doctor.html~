@@ -1,0 +1,68 @@
+<template name="addMerchantTemplate">
+{{>adminNavHeader}}
+
+<br><br>
+<!--<center><h1 style="font-family:Lucida Calligraphy Italic;">Admin</h1></center>-->
+  {{#unless userLoggedIn}}
+<section id="loginsec">
+<div>
+  <section class="content" style="padding-left:350px">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Login : Admin
+                                </header>
+                                <div class="panel-body">
+        <form id="siteadminlogin">
+          <table class="center">
+		<tr><td><label for="username">Username</label></td><td></td>
+            <td><input type="text" placeholder="Username" required id="usertake"></td></tr>
+            <br>
+		<tr><td><label for="password">Password</label></td><td></td>
+            <td><input type="password" placeholder="Password" required id="password"></td></tr>
+            <br>
+            <tr><td></td><td><input class="btn-btn-info" type="submit" value="Submit"></td></tr>
+          </table>
+        </form>
+</div>
+</section>
+     </div>
+</div>
+</section>
+          </div>
+</section>             
+  {{else}}
+   <!-- <input type="button" id="logout" value="Logout">-->
+    {{#if isInRole 'siteadmin'}}
+      
+      
+      <a href ="/showmerchant"><input type ="button" id ="showmerchant" value="Show Doctors"></a>
+      <div class="back">
+        {{#autoForm collection="doctorsCollection" id="insertDocForm" type="insert" omitFields="profileImageLocation"}}
+          <fieldset>
+          <center><h1>Add Doctor</h1></center>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='address'}}
+            {{> afQuickField name='contactDetails'}}
+            {{> afQuickField name='age'}}
+            {{> afQuickField name='gender'}}
+	    {{> afQuickField name = 'id'}}
+            {{> afQuickField name='specialization'}}
+            {{> afQuickField name='qualification'}}
+            {{> afQuickField name='availt'}}
+
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Submit</button>
+         
+        {{/autoForm}}
+      </div>
+    {{else}}
+      <h3>You are unauthorized</h3>
+    {{/if}}
+  {{/unless}}
+<br><br><div class="input">
+</div>
+
+</template>
+

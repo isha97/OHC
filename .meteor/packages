@@ -1,0 +1,49 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+iron:router
+accounts-password
+houston:admin
+alanning:roles
+email
+juliancwirko:s-alert
+tomi:upload-server
+tomi:upload-jquery
+twbs:bootstrap
+robincwillis:multiple-select
+aldeed:autoform
+aldeed:collection2
+alethes:pages
+fortawesome:fontawesome
+velocityjs:velocityjs
+altapp:recaptcha
+juliomac:prettyphoto
+isotope:isotope
+timmyg:wow
+differential:event-hooks
+momentjs:moment
+accounts-ui-unstyled
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+abhiaiyer:meteor-twilio
+cfs:standard-packages
+cfs:filesystem
+cfs:gridfs
+cfs:s3
+juliancwirko:s-alert-slide
+tsega:bootstrap3-datetimepicker
