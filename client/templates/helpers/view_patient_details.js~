@@ -1,5 +1,0 @@
-Template.viewPatientDetailsTemplate.helpers({
-	'pati': function() {
-        return patientsCollection.findOne();
-    }
-});

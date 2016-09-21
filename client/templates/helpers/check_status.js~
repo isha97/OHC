@@ -1,6 +1,0 @@
-Template.CheckStatusTemplate.helpers({
-    apprequest: function () {
-	var currentUsername = Meteor.user().username;
-      return appointmentsCollection.find({pname:currentUsername});
-    }
-  });
